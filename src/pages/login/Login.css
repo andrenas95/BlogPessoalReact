@@ -1,0 +1,8 @@
+.fundoLogin {
+    /* background: url("./src/assets/bd-dark.jpg") no-repeat center center; */
+    background-repeat: no-repeat;
+    min-height: 10vh;
+    width: 10%;
+    background-size: cover;
+    background-position: center;
+  }

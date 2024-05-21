@@ -1,18 +1,239 @@
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: center;
+.slide {
+  padding: 0;
+  width: 900px;
+  height: 800px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
 }
 
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+.slide * {
+user-select: none;
+-ms-user-select: none;
+-moz-user-select: none;
+
 }
+
+.slide input {
+  display:none;
+}
+
+.slide-container {
+   display: block;
+}
+
+.slide {
+ top: 0;
+ opacity: 0;
+ width: 600px;
+ height: 500px;
+ display: block;
+ position: absolute;
+ transform: scale(0);
+ transition: all .7s ease-in-out;
+}
+ .slide img {
+   width: 100%;
+   height: 100%;
+ }
+
+ .nav label{
+     width: 200px;
+     height: 100px;
+     display: none;
+     position: absolute;
+     opacity: 0;
+     z-index: 9;
+     cursor: pointer;
+     transition: opacity .2;
+     color: #fff;
+     font-size: 18px;
+     text-align: center;
+     background-color: yellowgreen;
+ }
+
+ .slide:hover + .nav label {
+   opacity: 0.5s;
+ }
+
+ .nav label:hover {
+   opacity: 1;
+ }
+
+ .nav .next {
+   right: 0;
+ }
+
+ input:checked + .slide-container .slide{
+   opacity: 1;
+   transform: scale(1);
+   transition: opacity 1s ease-in-out;
+ }
+
+ input:checked + .slide-container .nav label{
+   display: block;
+ }
+
+#root {
+  max-width: 10900px;
+  margin: 10 auto;
+  padding: rem;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  text-align: center;
+  background: url("./src/assets/bd-dark.jpg") no-repeat center center;
+   
+}
+
+.container{
+  display: incline-flex;
+}
+.container .estatico{
+  color: #fff;
+  font-size: 50px;
+  font-weight: 400;
+  margin-right: 380px;
+}
+
+.container .dinamico{
+  margin-left: 15px;
+  line-height: 90px;
+  height: 100px;
+  overflow: hidden;
+  margin-top: -82px;
+  margin-left: 150px;
+
+}
+.dinamico li{
+  color: #fc6d6d;
+  list-style: none;
+  font-size: 50px;
+  font-weight: 500;
+  left: 0;
+  position: relative;
+  top: 0;
+  animation: slide 6s steps(4) infinite;
+}
+@keyframes slide{
+  100%{
+    top: -360px;
+  }
+}
+
+.dinamicos li span::after{
+ content: "";
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ left: 0;
+ border-left: 2px solid #b98c8c;
+ animation: typing 1.5s steps(6) infinite;
+ background: #383737;
+ }
+
+ .dinamico li span{
+    position: relative;
+ }
+
+ @keyframes typing{
+  100%{
+    left: 100%;
+    margin: 0 -35px 0 35px;
+  }
+ }
+ /* SEJA BEM VINDO */
+
+ .containers{
+  display: inline-flex;
+ }
+
+
+ .container .estatico{
+  color: #fff;
+  font-size: 50px;
+  font-weight: 400;
+  margin-right: 380px;
+}
+
+ .container .dinamicos{
+     margin-left: 15px;
+     line-height: 90px;
+     height: 90px; 
+     overflow: hidden;
+   
+  }
+
+  .dinamicos li {
+   color:#fff;
+   list-style: none;
+   font-size: 60px;
+   font-weight: 500;
+   position: relative;
+   left:0;
+   border-left: 2px solid #524e4e;
+   animation: slide 6s steps(4) infinite;
+  }
+ @keyframes slide{
+  100%{
+    top: -360px;
+  }
+ }
+  .dinamicos li span{
+    position: relative;
+  }
+
+  @keyframes typing{
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;
+  }
   
+}
+
+.dinamicos li span::after{
+ content: "";
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ left: 0;
+ border-left: 2px solid #524e4e;
+ animation: typing 1.5s steps(10) infinite;
+ background: hsl(20, 1%, 21%);
+
+ } 
 
 
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #15c09baa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
