@@ -1,4 +1,4 @@
-import { EnvelopeSimple, GithubLogo, LinkedinLogo, } from '@phosphor-icons/react'
+import { EnvelopeSimple, GithubLogo, Link, LinkedinLogo, } from '@phosphor-icons/react'
 
 function Footer() {
  
@@ -7,9 +7,13 @@ function Footer() {
     <>
         <div className="flex justify-center bg-neutral-950 text-white">
           <div className="container flex flex-col items-center py-4">
-            <p className='text-xl font-bold'>Blog pessoal Generation | Copyright: </p>
+          <a
+               href="/home"> 
+            <p className='text-xl font-bold'>Blog Pessoal André| Copyright: &copy;</p></a>
+           
+         
             <p className='text-lg'>Acesse nossas redes sociais</p>
-            <div className='flex gap-7'>
+            <div className='flex gap-7'> 
               <a
                href="https://www.linkedin.com/in/andrenas95/"> 
               <LinkedinLogo size={48} weight='bold' />
@@ -25,6 +29,7 @@ function Footer() {
             </div>
           </div>
         </div>
+        
       </>
   )
 }

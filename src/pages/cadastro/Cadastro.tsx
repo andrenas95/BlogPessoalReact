@@ -1,13 +1,22 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
+import { ChangeEvent, useContext, useEffect, useState } from 'react'
 import './Cadastro.css'
 import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Service';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
 
 function Cadastro() {
 
   const navigate = useNavigate();
 
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const { handleLogout } = useContext(AuthContext)
+
+  function logout(){
+    handleLogout()
+    navigate('/') 
+  }
+  
   const [confirmaSenha, setConfirmaSenha] = useState<string>('');
 
   // Estado responsável pelos dados do Usuário que será cadastrado
@@ -19,15 +28,28 @@ function Cadastro() {
     foto: ''
   });
 
+  const [usuarioResposta, setUsuarioResposta] = useState<Usuario>({
+    id: 0,
+    nome: '',
+    usuario: '',
+    senha: '',
+    foto: ''
+  });
+
   useEffect(() => {
-    if (usuario.id !== 0){
+    if (usuarioResposta.id !== 0){
       retornar();
     }
-  }, [usuario]);
+  }, [usuarioResposta]);
 
   function retornar(){
     navigate('/login')
   }
+
+  function back(){
+  navigate('/login')
+  }
+  
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>){
     setUsuario({
@@ -41,14 +63,14 @@ function Cadastro() {
     console.log(confirmaSenha);
   }
 
-  async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>){
+  async function cadastrarNovoUsuario(e: ChangeEvent<HTMLFormElement>){
     e.preventDefault();
 
     if(confirmaSenha === usuario.senha && usuario.senha.length >= 8){
 
       try{
 
-        await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
+        await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResposta);
         alert('Usuário cadastrado com sucesso!');
 
       }catch(error){
@@ -63,7 +85,7 @@ function Cadastro() {
 
   }
 
-  console.log(JSON.stringify(usuario));
+  // console.log(JSON.stringify(usuario));
 
   return (
     <>
@@ -137,9 +159,8 @@ function Cadastro() {
           <div className="flex justify-around w-full gap-8">
             <button className='rounded text-white bg-red-400 
                   hover:bg-red-700 w-1/2 py-2' 
-                  onClick={retornar}
-                  >
-              Cancelar
+                  onClick={logout}>
+              Cancelar 
             </button>
             <button 
                 type='submit'

@@ -4,8 +4,6 @@ import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import UsuarioLogin from '../../models/UsuarioLogin';
 import { AuthContext } from '../../contexts/AuthContext';
 import { RotatingLines } from 'react-loader-spinner';
-import Cadastro from '../cadastro/Cadastro';
-
 
 function Login() {
 
@@ -92,7 +90,7 @@ function Login() {
 
                     <p>
                         Ainda não tem uma conta?{' '}
-                        <Link to="cadastro" onClick={Cadastro} className="hover:underline">Cadastre-se</Link>
+                        <Link to="cadastro" className="hover:underline">Cadastre-se</Link>
                          
                     </p>
                 </form>
