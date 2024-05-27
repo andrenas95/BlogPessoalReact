@@ -1,4 +1,11 @@
+import React from 'react';
+import homeLogo from '../../assets/home.png'
 import './Home.css';
+import ListaPostagens from '../../components/postagens/listapostagem/ListaPostagens';
+import ModalPostagem from '../../components/postagens/modalpostagem/ModalPostagem';
+
+
+
 
 function Home() {
     return (
@@ -26,31 +33,27 @@ function Home() {
                               <li><span>Hello World</span></li>    
                           </ul>
                         </div>
-                        <p className='text-xl'>
-                            Expresse aqui seus pensamentos e opniões
-                        </p>
-  
-                        <div className="flex justify-around gap-4">
-                            <div className='rounded text-white 
-                                            border-white border-solid border-2 py-2 px-4'
-                                >
-                                Nova Postagem
-                            </div>
-                        </div>
-                    </div>
-                    
-  
-                    <div className="flex justify-center ">
-                        <img
-                            src="https://i.imgur.com/fyfri1v.png"
-                            alt="Imagem Página Home"
-                            className='w-2/3' 
-                        />
-                    </div>
-                </div>
+                        <p className='text-xl'>Expresse aqui seus pensamentos e opniões</p>
+                                         
+            <div className="flex justify-around gap-4">
+              <ModalPostagem />
+              <button className='rounded bg-white text-blue-800 py-2 px-4'>Ver postagens</button>
             </div>
-        </>
-    )
-  }
+            </div>
   
-  export default Home
+            <div className="flex justify-center ">
+              <img src={homeLogo} alt="" className='w-2/3' />
+
+              </div>
+          </div>
+        </div>
+        <ListaPostagens />
+      </>
+    );
+}
+
+export default Home;
+      
+    
+        
+        
