@@ -100,8 +100,8 @@ function FormTema() {
     console.log(JSON.stringify(tema))
 
     return (
-        <div className="container flex flex-col items-center justify-center mx-auto">
-            <h1 className="text-4xl text-center my-8">
+        <div className="container flex flex-col items-center justify-center mx-auto bg-neutral-800">
+            <h1 className="text-5xl text-center my-8">
                 {id === undefined ? 'Cadastrar Tema' : 'Editar Tema'}
             </h1>
 
