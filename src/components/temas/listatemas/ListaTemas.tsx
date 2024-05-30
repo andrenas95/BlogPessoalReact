@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { DNA } from 'react-loader-spinner';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Tema from '../../../models/Tema';
 import { buscar } from '../../../services/Service';
