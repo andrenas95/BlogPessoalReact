@@ -1,6 +1,3 @@
-import React from 'react';
-
-
 import 'reactjs-popup/dist/index.css';
 import Popup from 'reactjs-popup';
 

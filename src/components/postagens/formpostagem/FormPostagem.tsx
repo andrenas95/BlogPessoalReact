@@ -4,7 +4,6 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import Postagem from '../../../models/Postagem';
 import Tema from '../../../models/Tema';
 import { buscar, atualizar, cadastrar } from '../../../services/Service';
-import { toastAlerta } from '../../../utils/toastAlerta';
 
 
 function FormPostagem() {
@@ -57,7 +56,7 @@ function FormPostagem() {
 
   useEffect(() => {
     if (token === '') {
-      toastAlerta('Você precisa estar logado', 'info');
+      alert('Você precisa estar logado');
       navigate('/');
     }
   }, [token]);
@@ -103,14 +102,14 @@ function FormPostagem() {
             Authorization: token,
           },
         });
-        toastAlerta('Postagem atualizada com sucesso', 'sucesso');
+        alert('Postagem atualizada com sucesso');
         retornar();
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          toastAlerta('O token expirou, favor logar novamente', 'info')
+          alert('O token expirou, favor logar novamente')
           handleLogout()
         } else {
-          toastAlerta('Erro ao atualizar a Postagem', 'erro');
+          alert('Erro ao atualizar a Postagem');
         }
       }
     } else {
@@ -121,21 +120,20 @@ function FormPostagem() {
           },
         });
 
-        toastAlerta('Postagem cadastrada com sucesso', 'sucesso');
+        alert('Postagem cadastrada com sucesso');
         retornar();
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          toastAlerta('O token expirou, favor logar novamente', 'info')
+          alert('O token expirou, favor logar novamente')
           handleLogout()
         } else {
-          toastAlerta('Erro ao cadastrar a Postagem', 'erro');
+          alert('Erro ao cadastrar a Postagem');
         }
       }
     }
   }
 
   const carregandoTema = tema.descricao === '';
-
   return (
     <div className="container flex flex-col mx-auto items-center">
       <h1 className="text-4xl text-center my-8">{id !== undefined ? 'Editar Postagem' : 'Cadastrar Postagem'}</h1>
