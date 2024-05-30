@@ -1,8 +1,10 @@
 .fundologin {
     background: url("https://ik.imagekit.io/andrenas95/blog_pessoal/bd-dark.jpg");
     background-repeat: no-repeat;
+    margin-bottom: 40%;;
     width: 100vw;
     min-height: 100vh;
     background-size: cover;
     background-position: center;
+        padding: rem;
   }

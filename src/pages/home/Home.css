@@ -1,88 +1,16 @@
-.slide {
-  padding: 0;
-  width: 900px;
-  height: 800px;
-  display: block;
-  margin: 0 auto;
-  position: relative;
-}
-
-.slide * {
-user-select: none;
--ms-user-select: none;
--moz-user-select: none;
-
-}
-
-.slide input {
-  display:none;
-}
-
-.slide-container {
-   display: block;
-}
-
-.slide {
- top: 0;
- opacity: 0;
- width: 600px;
- height: 500px;
- display: block;
- position: absolute;
- transform: scale(0);
- transition: all .7s ease-in-out;
-}
- .slide img {
-   width: 100%;
-   height: 100%;
- }
-
- .nav label{
-     width: 200px;
-     height: 100px;
-     display: none;
-     position: absolute;
-     opacity: 0;
-     z-index: 9;
-     cursor: pointer;
-     transition: opacity .2;
-     color: #fff;
-     font-size: 18px;
-     text-align: center;
-     background-color: yellowgreen;
- }
-
- .slide:hover + .nav label {
-   opacity: 0.5s;
- }
-
- .nav label:hover {
-   opacity: 1;
- }
-
- .nav .next {
-   right: 0;
- }
-
- input:checked + .slide-container .slide{
-   opacity: 1;
-   transform: scale(1);
-   transition: opacity 1s ease-in-out;
- }
-
- input:checked + .slide-container .nav label{
-   display: block;
- }
-
-#root {
-  max-width: 10900px;
-  margin: 10 auto;
-  padding: rem;
-  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
-  text-align: center;
+.fundo {
   background: url("https://ik.imagekit.io/andrenas95/blog_pessoal/bd-dark.jpg");
-  background-repeat: no repeat;
-   
+  background-repeat: no-repeat;
+  margin-bottom: 4%;;
+  width: 100vw;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  padding: rem;
+}
+#root{
+
+    background-color: #000000;
 }
 
 .container{
@@ -93,6 +21,7 @@ user-select: none;
   font-size: 50px;
   font-weight: 400;
   margin-right: 380px;
+  margin-left: 105px;
 }
 
 .container .dinamico{
@@ -101,7 +30,7 @@ user-select: none;
   height: 100px;
   overflow: hidden;
   margin-top: -82px;
-  margin-left: 150px;
+  margin-left: 280px;
 
 }
 .dinamico li{
@@ -160,6 +89,7 @@ user-select: none;
      line-height: 90px;
      height: 90px; 
      overflow: hidden;
+     margin-left: 100px;
    
   }
 
@@ -170,7 +100,7 @@ user-select: none;
    font-weight: 500;
    position: relative;
    left:0;
-   border-left: 2px solid #524e4e;
+   border-left: 2px solid #3b3a3a;
    animation: slide 6s steps(4) infinite;
   }
  @keyframes slide{
@@ -198,7 +128,7 @@ user-select: none;
  left: 0;
  border-left: 2px solid #524e4e;
  animation: typing 1.5s steps(10) infinite;
- background: hsl(20, 1%, 21%);
+ background: hsl(0, 3%, 16%);
 
  } 
 
