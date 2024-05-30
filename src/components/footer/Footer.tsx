@@ -1,7 +1,6 @@
 import {
   EnvelopeSimple,
   GithubLogo,
-  Link,
   LinkedinLogo,
 } from "@phosphor-icons/react";
 import { ReactNode, useContext } from "react";
