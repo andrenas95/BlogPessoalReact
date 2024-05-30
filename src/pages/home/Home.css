@@ -80,7 +80,8 @@ user-select: none;
   padding: rem;
   font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
   text-align: center;
-  background: url("./src/assets/bd-dark.jpg") no-repeat center center;
+  background: url("https://ik.imagekit.io/andrenas95/blog_pessoal/bd-dark.jpg");
+  background-repeat: no repeat;
    
 }
 

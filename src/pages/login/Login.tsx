@@ -34,11 +34,11 @@ function Login() {
     }
 
     console.log(JSON.stringify(usuarioLogin))
-
+    
     return (
-        <>
-            <div className="grid grid-cols-1 lg:grid-cols-1 h-screen place-items-center font-bold ">
-                <form className="flex justify-center items-center flex-col w-1/5 gap-5" 
+        <>   
+            <div className="fundologin grid grid-cols-1 lg:grid-cols-1 h-screen place-items-center font-bold">
+                <form className="flex justify-center items-center flex-col w-1/ gap-9 text-white" 
                     onSubmit={login}
                 >
                     <h1 className="text-slate-900 text-6xl  ">Bem Vindo </h1>
@@ -49,7 +49,7 @@ function Login() {
                             id="usuario"
                             name="usuario"
                             placeholder="Usuario"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-slate-700 rounded p-2 text-black"
                             value={usuarioLogin.usuario}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
@@ -69,7 +69,7 @@ function Login() {
                     <button
                         type='submit'
                         className="rounded bg-indigo-400 flex justify-center
-                                   hover:bg-indigo-900 text-white w-1/2 py-2">
+                                   hover:bg-indigo-900 text-black w-1/2 py-2">
 
                         {isLoading ?
 
@@ -86,7 +86,7 @@ function Login() {
                         
                     </button>
 
-                    <hr className="border-slate-80 w-full" />
+                    <hr className="border-slate-80 w-full " />
 
                     <p>
                         Ainda não tem uma conta?{' '}
@@ -94,7 +94,7 @@ function Login() {
                          
                     </p>
                 </form>
-                <div className="fundoLogin hidden lg:block"></div>
+               
             </div>
         </>
     );
